@@ -1,0 +1,29 @@
+[package]
+name = "ecs-bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy_ecs = { version = "0.12.1", features = ["multi-threaded"] }
+hecs = "0.10.4"
+legion = { version = "0.4.0", features = ["extended-tuple-impls"] }
+shipyard = "0.6.2"
+flecs = "0.1.5"
+
+[dev-dependencies]
+criterion = { version = "0.4", features = ["html_reports"] }
+
+[[bench]]
+name = "mass-spawn"
+harness = false
+path = "benches/mass-spawn.rs"
+
+[[bench]]
+name = "simple-spawn"
+harness = false
+path = "benches/simple-spawn.rs"
+
+[[bench]]
+name = "mass-query"
+harness = false
+path = "benches/mass-query.rs"
